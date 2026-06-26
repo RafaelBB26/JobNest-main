@@ -1,6 +1,9 @@
 import os
-
+from dotenv import load_dotenv
 import pyodbc
+
+load_dotenv()
+
 
 def test_connection_mac():
     DB_CONFIG = {

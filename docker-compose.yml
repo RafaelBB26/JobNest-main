@@ -1,0 +1,28 @@
+services:
+  jobnest:
+    build: .
+    container_name: jobnest-app
+
+    ports:
+      - "5000:5000"
+
+    environment:
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
+
+      DB_DRIVER: ${DB_DRIVER}
+      DB_SERVER: ${DB_SERVER}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_ENCRYPT: ${DB_ENCRYPT}
+      DB_TRUST_SERVER_CERTIFICATE: ${DB_TRUST_SERVER_CERTIFICATE}
+      DB_TIMEOUT: ${DB_TIMEOUT}
+
+      MAIL_SERVER: ${MAIL_SERVER}
+      MAIL_PORT: ${MAIL_PORT}
+      MAIL_USE_TLS: ${MAIL_USE_TLS}
+      MAIL_USE_SSL: ${MAIL_USE_SSL}
+      EMAIL_USER: ${EMAIL_USER}
+      EMAIL_PASSWORD: ${EMAIL_PASSWORD}
+
+    restart: unless-stopped
