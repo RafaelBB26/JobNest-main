@@ -1,4 +1,8 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, send_from_directory, abort
 import pyodbc
 from werkzeug.security import generate_password_hash, check_password_hash
